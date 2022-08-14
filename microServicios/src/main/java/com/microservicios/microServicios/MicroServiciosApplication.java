@@ -1,0 +1,15 @@
+package com.microservicios.microServicios;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
+
+@EnableFeignClients
+@SpringBootApplication
+public class MicroServiciosApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(MicroServiciosApplication.class, args);
+	}
+
+}
