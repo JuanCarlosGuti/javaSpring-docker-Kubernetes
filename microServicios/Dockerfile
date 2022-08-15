@@ -8,6 +8,8 @@ COPY ./microServicios/mvnw .
 COPY ./microServicios/pom.xml .
 
 
+
+
 #RUN ./mvnw clean package -Dmaven.test.skip -Dmaven.main.skip -Dspring-boot.repackage.skip && -r ./target/
 
 RUN ./mvnw dependency:go-offline
@@ -15,7 +17,7 @@ RUN ./mvnw dependency:go-offline
 COPY ./microServicios/src ./src
 
 RUN ./mvnw clean package -DskipTests
-
-EXPOSE 8002
+ENV PORT 8001
+EXPOSE $PORT
 
 CMD ["java", "-jar", "./target/microServicios-0.0.1-SNAPSHOT.jar"]
